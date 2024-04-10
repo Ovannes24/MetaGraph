@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Aframe Spheres and Lines Example</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-entity id="rig" position="5 5 10">
+       <a-camera
+        look-controls
+        wasd-controls="acceleration:400; fly: true">
+            <a-entity
+            cursor
+            geometry="primitive:circle;"
+            material="color:green;"
+            position="0 0 -1"
+            scale="0.01 0.01 0.01"
+            ></a-entity>
+        </a-camera>
+      </a-entity>
+      </a-entity>
+
+
+      <a-assets>
+        <a-mixin 
+            id="cube" 
+            geometry="primitive:box;" 
+            material="opacity: 0.3; color: blue;"
+        
+        ></a-mixin>
+        <a-mixin 
+            id="sphere" 
+            geometry="primitive:sphere;" 
+            material="opacity: 0.3; color: blue;"
+        
+        ></a-mixin>
+        <a-mixin 
+            id="changeScale1" 
+            animation__mouseenter="property: scale; to: 0.9 0.9 0.9; dur: 200; startEvents: mouseenter" 
+            animation__mouseenter1="property: components.material.material.opacity; type: opacity; to: 0.6; dur: 200; startEvents: mouseenter" 
+            animation__mouseleave="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave" 
+            animation__mouseleave1="property: components.material.material.opacity; type: opacity; to: 0.3; dur: 200; startEvents: mouseleave" 
+            >
+        </a-mixin>
+        <a-mixin 
+            id="changeVisible1" 
+            animation__mouseenter="property: visible; to: false; dur: 200; startEvents: mouseenter"  
+            animation__mouseleave="property: visible; to: true; dur: 200; startEvents: mouseleave" 
+            >
+        </a-mixin>
+        
+      </a-assets>
+
+
+
+
+      <a-entity line="start: 0 0 0; end: 10 0 0; color: red"></a-entity>
+      <a-entity line="start: 0 0 0; end: 0 10 0; color: green"></a-entity>
+      <a-entity line="start: 0 0 0; end: 0 0 10; color: blue"></a-entity>
+      
+
+<!-- -------------------------------------------------------------------------------- -->
+<!-- -------------------------------------------------------------------------------- -->
+<!-- -------------------------------------------------------------------------------- -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- -------------------------------------------------------------------------------- -->
+<!-- -------------------------------------------------------------------------------- -->
+<!-- -------------------------------------------------------------------------------- -->
+
+
+
+      
+
+
+      
+      <!-- <a-entity animation="property: rotation; to: 0 360 0; dur: 2000000; easing: linear; loop: true; repeat: indefinite">
+       
+        
+      </a-entity> -->
+<!--       
+      <a-text position="0 1 0" value=" Привет ABC㝂㝄㝆㝈㝊日本語" color="black"  scale="1 1 1"></a-text>
+      <a-text  position="1 1 1" value="Привет" font="custom-msdf.json" color="black" negate="false" scale="1 1 1"></a-text> -->
+      
+      <!-- <a-entity light="type: ambient"></a-entity>
+      <a-entity light="type: directional"></a-entity> -->
+      <a-sky color="white"></a-sky>
+    </a-scene>
+  </body>
+</html>
